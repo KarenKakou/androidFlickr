@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment2">
+
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="com.example.flickr.ui.ui.main.MainFragment"
+        android:label="main_fragment"
+        tools:layout="@layout/main_fragment" >
+        <action
+            android:id="@+id/versListFragment"
+            app:destination="@id/listFragment2" />
+        <action
+            android:id="@+id/action_mainFragment2_to_fullFragment"
+            app:destination="@id/fullFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/listFragment2"
+        android:name="com.example.flickr.ui.ui.list.ListFragment"
+        android:label="fragment_list"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/versFullFragment"
+            app:destination="@id/fullFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fullFragment"
+        android:name="com.example.flickr.ui.ui.full.FullFragment"
+        android:label="FullFragment"
+        tools:layout="@layout/full_fragment" >
+        <argument
+            android:name="url"
+            app:argType="string" />
+    </fragment>
+</navigation>
